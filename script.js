@@ -12,6 +12,14 @@ while (j < 5) {
 }
 console.log(numeriRandom);
 
+//CHIEDO all'utente di inserire i 5 numeri 
+var numeriUtente = [];
+for (var i = 0; i < 5; i++) {
+    numeriUtente [i] = parseInt(prompt("Inserisci i numeri"))
+}
+console.log(numeriUtente);
+
+
 
 
 

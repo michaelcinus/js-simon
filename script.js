@@ -45,13 +45,14 @@ function countdown() {
       }
     } 
     console.log(numeriUtente);
+
     //VERIFICO se i numeri inseriti sono corretti, e stabilisco il risultato
     var numeriIndovinati = [];
     var punteggio = 0;
     for (var j = 0; j < 5; j++) {
         var numeroVerifica = numeriUtente [j];
-        if (inArray(numeriRandom, numero)) {
-            numeriIndovinati.push(numero);
+        if (inArray(numeriRandom, numeroVerifica)) {
+            numeriIndovinati.push(numeroVerifica);
             punteggio++;
         }
     }

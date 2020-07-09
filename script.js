@@ -27,15 +27,29 @@ function countdown() {
     alert("tempo finito");
         //CHIEDO all'utente di inserire i 5 numeri 
         var numeriUtente = [];
-        for (var i = 0; i < 5; i++) {
-        numeriUtente [i] = parseInt(prompt("Inserisci i numeri"))
+        var i = 0;
+        while ( i < 5) {
+        var numero = parseInt(prompt("Inserisci i numeri"))
+
+        //VERIFICO se il numero inserito è già presente nell'array numeri Utenti
+        if (inArray(numeriUtente, numero) ==true) {
+        alert("Numero già inserito");
+       } 
+      //VERIFICO se il numero inserito non sia superiore del range max, o min o NaN
+       else if (numero > 100 || numero < 0 || isNaN(numero)) {
+        alert("Numero inserito non è valido")
+       }  
+       else {
+        numeriUtente.push(numero);
+        i++;
+      }
     } 
     console.log(numeriUtente);
     //VERIFICO se i numeri inseriti sono corretti, e stabilisco il risultato
     var numeriIndovinati = [];
     var punteggio = 0;
     for (var j = 0; j < 5; j++) {
-        var numero = numeriUtente [j];
+        var numeroVerifica = numeriUtente [j];
         if (inArray(numeriRandom, numero)) {
             numeriIndovinati.push(numero);
             punteggio++;
